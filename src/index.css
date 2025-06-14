@@ -23,3 +23,10 @@
   width: 300px;
 
 }
+.suggestions h5{
+  font-size: 16px;
+}
+
+.suggestions .dp{
+  margin-top: 0px !important;
+}
