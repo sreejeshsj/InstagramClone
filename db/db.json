@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 101,
+      "user": {
+        "username": "john_doe",
+        "profile_pic": "src/assets/p1.jpg"
+      },
+      "image": "src/assets/first.avif",
+      "caption": "Beautiful sunset 🌅 #Nature",
+      "likes": 120,
+      "comments": [
+        {
+          "user": "alice_wonder",
+          "comment": "Wow! Amazing shot! 📸"
+        },
+        {
+          "user": "mark_92",
+          "comment": "Where is this place?"
+        }
+      ],
+      "timestamp": "2025-02-11T14:30:08Z"
+    },
+    {
+      "id": 102,
+      "user": {
+        "username": "jane_smith",
+        "profile_pic": "src/assets/p2.jpg"
+      },
+      "image": "src/assets/second.jpg",
+      "caption": "Delicious homemade brunch 🍳☕ #Foodie",
+      "likes": 95,
+      "comments": [
+        {
+          "user": "foodie_mike",
+          "comment": "Recipe please! 🤤"
+        }
+      ],
+      "timestamp": "2025-02-12T09:15:00Z"
+    },
+    {
+      "id": 103,
+      "user": {
+        "username": "travel_guru",
+        "profile_pic": "src/assets/p3.avif"
+      },
+      "image": "src/assets/third.png",
+      "caption": "Exploring the mountains! 🏔️ #Adventure",
+      "likes": 150,
+      "comments": [
+        {
+          "user": "hiker_jess",
+          "comment": "Looks like an epic trip!"
+        },
+        {
+          "user": "nature_lover",
+          "comment": "I want to go there too 😍"
+        }
+      ],
+      "timestamp": "2025-02-13T16:45:30Z"
+    }
+  ]
+}
