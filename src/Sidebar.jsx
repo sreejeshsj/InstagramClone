@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./assets/in.png";
+import { useNavigate } from "react-router-dom";
 function Sidebar() {
+  const navigate=useNavigate()
   return (
     <div className="m-3 position-fixed">
       <div className="d-flex flex-column gap-3">
@@ -26,7 +28,7 @@ function Sidebar() {
         <div>
           <i className="bi bi-plus-square"></i>Create
         </div>
-        <div>
+        <div onClick={()=>navigate('/profile')}>
           <i className="bi bi-person"></i>Profile
         </div>
       </div>

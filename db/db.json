@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "user": {
         "id": 101,
         "username": "john_doe",
@@ -23,7 +23,7 @@
       "timestamp": "2025-02-11T14:30:08Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "user": {
         "id": 102,
         "username": "jane_smith",
@@ -41,7 +41,7 @@
       "timestamp": "2025-02-12T09:15:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "user": {
         "id": 103,
         "username": "travel_guru",
@@ -64,30 +64,29 @@
     }
   ],
   "profile": {
-    "id": 101,
     "username": "john_doe",
     "profile_pic": "src/assets/p1.jpg"
   },
   "suggestions": [
     {
-      "id": 101,
+      "id": "101",
       "username": "john",
       "profile_pic": "src/assets/p1.jpg"
     },
     {
-      "id": 102,
+      "id": "102",
       "username": "second",
       "profile_pic": "src/assets/p2.jpg"
     },
     {
-      "id": 103,
+      "id": "103",
       "username": "Third",
       "profile_pic": "src/assets/p3.avif"
     }
   ],
   "story": [
     {
-      "id": 1,
+      "id": "1",
       "user": {
         "id": 101,
         "username": "john_doe",
@@ -96,7 +95,7 @@
       "image": "/public/image/s1.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "user": {
         "id": 102,
         "username": "jane_smith",
@@ -105,13 +104,13 @@
       "image": "/public/image/s2.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "user": {
         "id": 103,
         "username": "travel_guru",
         "profile_pic": "src/assets/p3.avif"
       },
-      "image":"/public/image/s4.jpg"
+      "image": "/public/image/s4.jpg"
     }
   ]
 }
