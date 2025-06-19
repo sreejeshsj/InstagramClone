@@ -4,13 +4,24 @@ function Profile() {
   const [profile, setProfile] = useState(null);
   const [username, setUsername] = useState("");
   const [image, setImage] = useState(null);
+  const [followers, setFollowers] = useState([]);
+  const [unFollowed,setUnfollowed] = useState(0)
   useEffect(() => {
     axios.get("http://localhost:3000/profile").then((response) => {
-      console.log(response.data);
       setProfile(response.data);
       setUsername(response.data.username);
     });
-  }, []);
+
+    axios
+      .get("http://localhost:3000/Followers")
+      .then((data) => {
+        setFollowers(data.data);
+        console.log(data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [unFollowed]);
   const handleSubmit = async (e) => {
     const newPic = image ? `src/assets/${image?.name}` : profile.profile_pic;
 
@@ -21,14 +32,22 @@ function Profile() {
         profile_pic: newPic,
       });
       setProfile({
-      ...profile,
-      username: username,
-      profile_pic: newPic
-    });
+        ...profile,
+        username: username,
+        profile_pic: newPic,
+      });
       alert("profile updated successfully");
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const handleUnfollow = async (id) => {
+    await axios
+      .delete(`http://localhost:3000/Followers/${id}`)
+      .then(() => alert("Unfollowed"))
+      .then(()=>setUnfollowed((prev)=>!prev))
+      .catch((err) => console.log(err));
   };
   return (
     <div className="m-5">
@@ -62,6 +81,22 @@ function Profile() {
         </div>
       ) : (
         <div>Loading...</div>
+      )}
+
+      {followers.length > 0 ? (
+        followers.map((item, index) => (
+          <div key={index} className="d-flex my-3">
+            <h5>{item.username}</h5>
+            <button
+              onClick={() => handleUnfollow(item.id)}
+              className="btn btn-secondary ms-auto"
+            >
+              Unfollow
+            </button>
+          </div>
+        ))
+      ) : (
+        <p>0 Following</p>
       )}
     </div>
   );

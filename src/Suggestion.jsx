@@ -1,9 +1,10 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function Suggestion() {
   const [profile, setProfile] = useState(null);
   const [suggestion, setSuggestion] = useState([]);
-
+  
   useEffect(() => {
     fetch("http://localhost:3000/profile")
       .then((response) => response.json())
@@ -15,6 +16,12 @@ function Suggestion() {
       .then((data) => setSuggestion(data))
       .catch((err) => console.log(err));
   }, []);
+
+  const handleFollow=async (id,username)=>{
+    
+    await axios.post('http://localhost:3000/Followers',{'id':id,'username':username})
+    alert(`Followed ${username}`)
+  }
   return (
     <div>
       <div className="suggestions w-75 m-4">
@@ -41,13 +48,14 @@ function Suggestion() {
             {suggestion.map((suggestion, index) => (
               <div  key={index}>
                 <div className="d-flex">
-                  <img
+                  <img 
                     className="dp rounded-circle"
                     src={suggestion.profile_pic}
                     alt="Profile-pic"
                   />
                   <h5>{suggestion.username}</h5>
-                  <p className="text-primary ms-auto">Follow</p>
+                  <a style={{ textDecoration: 'none' }}
+                 onClick={()=>handleFollow(suggestion.id,suggestion.username)} className="text-primary ms-auto">Follow</a>
                 </div>
               </div>
             ))}
